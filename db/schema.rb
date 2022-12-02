@@ -61,15 +61,26 @@ ActiveRecord::Schema.define(version: 2022_11_14_151236) do
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "uuid"
     t.string "name"
+    t.integer "country_id"
+    t.integer "region_id"
+    t.integer "municipality_id"
     t.string "email_adress"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "voting_counts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "uuid"
     t.integer "candidate_id"
     t.integer "vote"
+    t.integer "country_id"
+    t.integer "region_id"
+    t.integer "municipality_id"
+    t.integer "user_id"
+    t.integer "position_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
