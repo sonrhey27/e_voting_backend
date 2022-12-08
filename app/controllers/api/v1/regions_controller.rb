@@ -1,6 +1,6 @@
 class Api::V1::RegionsController < ApplicationController
   def index
-    regions = Region.all
+    regions = Region.all.order(id: :desc)
     render json: regions, type: :region_list
   end
 

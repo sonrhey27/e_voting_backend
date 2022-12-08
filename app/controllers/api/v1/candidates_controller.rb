@@ -1,6 +1,6 @@
 class Api::V1::CandidatesController < ApplicationController
   def index
-    candidates = Candidate.all
+    candidates = Candidate.all.order(id: :desc)
     render json: candidates, type: :candidate_list
   end
 

@@ -1,6 +1,6 @@
 class Api::V1::PositionsController < ApplicationController
   def index
-    positions = Position.all
+    positions = Position.all.order(id: :desc)
     render json: positions, type: :position_list
   end
 

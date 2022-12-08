@@ -1,6 +1,6 @@
 class Api::V1::MunicipalitiesController < ApplicationController
   def index
-    municipalities = Municipality.all
+    municipalities = Municipality.all.order(id: :desc)
     render json: municipalities, type: :municipality_list
   end
 

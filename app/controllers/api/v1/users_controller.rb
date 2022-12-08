@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   def index
-    users = User.all
+    users = User.all.all.order(id: :desc)
     render json: users, type: :user_list
   end
 

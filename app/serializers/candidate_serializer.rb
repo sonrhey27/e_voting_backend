@@ -1,7 +1,11 @@
 class CandidateSerializer < ActiveModel::Serializer
-  attributes :uuid, :name
+  attributes :id, :uuid, :name, :position_name, :position_id
+
+  def position_name
+    object.position.name
+  end
 
   CANDIDATE_LIST = {
-    candidate: %i(uuid name)
+    candidate: %i(id uuid name position_name position_id)
   }.freeze
 end

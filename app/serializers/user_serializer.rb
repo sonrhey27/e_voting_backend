@@ -1,7 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :uuid, :name, :email_adress
+  attributes :id, :uuid, :name, :email_adress, :country_id, :region_id, :municipality_id, :user_type
 
   USER_LIST = {
-    user: %i(uuid name email_adress)
+    user: %i(id uuid name email_adress country_id region_id municipality_id user_type)
   }
 end

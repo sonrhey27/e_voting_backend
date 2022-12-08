@@ -8,7 +8,13 @@ Rails.application.routes.draw do
       resources :positions
       resources :regions
       resources :users
-      resources :voting_counts
+      resources :voting_counts, only: [:create]
+
+      resources :voting_counts do
+        collection do
+          get 'vote_count'
+        end
+      end
 
       resources :users do
         collection do

@@ -1,7 +1,7 @@
 class MunicipalitySerializer < ActiveModel::Serializer
-  attributes :uuid, :region_id, :code, :name
+  attributes :uuid, :region_id, :code, :name, :id
 
   MUNICIPALITY_LIST = {
-    municipality: %i(uuid region_id code name)
+    municipality: %i(uuid region_id code name id)
   }.freeze
 end
